@@ -490,34 +490,34 @@ static void usage() {
 	printf("Usage:\n");
 	printf("\t-h # this help\n");
 	printf("\t[-d serial_number] # Serial number of desired HackRF.\n");
-	printf("\t-r <filename> # Receive data into file (use '-' for stdout).\n");
+//	printf("\t-r <filename> # Receive data into file (use '-' for stdout).\n");
 	printf("\t-t <filename> # Transmit data from file (use '-' for stdin).\n");
+        printf("\t[-R] # Repeat  mode (default is off) \n");
+	printf("\t[-c amplitude] # CW signal source mode, amplitude 0-127 (DC value to DAC).\n");
 	printf("\t-w # Receive data into file with WAV header and automatic name.\n");
 	printf("\t   # This is for SDR# compatibility and may not work with other software.\n");
-	printf("\t[-f freq_hz] # Frequency in Hz [%sMHz to %sMHz].\n",
+	printf("\t[-f freq_min:freq_max] # minimum and maximum frequencies in MHz [%sMHz to %sMHz].\n",
 		u64toa((FREQ_MIN_HZ/FREQ_ONE_MHZ),&ascii_u64_data1),
 		u64toa((FREQ_MAX_HZ/FREQ_ONE_MHZ),&ascii_u64_data2));
-	printf("\t[-i if_freq_hz] # Intermediate Frequency (IF) in Hz [%sMHz to %sMHz].\n",
-		u64toa((IF_MIN_HZ/FREQ_ONE_MHZ),&ascii_u64_data1),
-		u64toa((IF_MAX_HZ/FREQ_ONE_MHZ),&ascii_u64_data2));
-	printf("\t[-o lo_freq_hz] # Front-end Local Oscillator (LO) frequency in Hz [%sMHz to %sMHz].\n",
-		u64toa((LO_MIN_HZ/FREQ_ONE_MHZ),&ascii_u64_data1),
-		u64toa((LO_MAX_HZ/FREQ_ONE_MHZ),&ascii_u64_data2));
-	printf("\t[-m image_reject] # Image rejection filter selection, 0=bypass, 1=low pass, 2=high pass.\n");
-	printf("\t[-a amp_enable] # RX/TX RF amplifier 1=Enable, 0=Disable.\n");
-	printf("\t[-p antenna_enable] # Antenna port power, 1=Enable, 0=Disable.\n");
-	printf("\t[-l gain_db] # RX LNA (IF) gain, 0-40dB, 8dB steps\n");
-	printf("\t[-g gain_db] # RX VGA (baseband) gain, 0-62dB, 2dB steps\n");
+//	printf("\t[-i if_freq_hz] # Intermediate Frequency (IF) in Hz [%sMHz to %sMHz].\n",
+//		u64toa((IF_MIN_HZ/FREQ_ONE_MHZ),&ascii_u64_data1),
+//		u64toa((IF_MAX_HZ/FREQ_ONE_MHZ),&ascii_u64_data2));
+//	printf("\t[-o lo_freq_hz] # Front-end Local Oscillator (LO) frequency in Hz [%sMHz to %sMHz].\n",
+//		u64toa((LO_MIN_HZ/FREQ_ONE_MHZ),&ascii_u64_data1),
+//		u64toa((LO_MAX_HZ/FREQ_ONE_MHZ),&ascii_u64_data2));
+//	printf("\t[-m image_reject] # Image rejection filter selection, 0=bypass, 1=low pass, 2=high pass.\n");
+	printf("\t[-a amp_enable] # TX RF amplifier 1=Enable, 0=Disable.\n");
+//	printf("\t[-l gain_db] # RX LNA (IF) gain, 0-40dB, 8dB steps\n");
+//	printf("\t[-g gain_db] # RX VGA (baseband) gain, 0-62dB, 2dB steps\n");
 	printf("\t[-x gain_db] # TX VGA (IF) gain, 0-47dB, 1dB steps\n");
+	printf("\t[-p antenna_enable] # Antenna port power, 1=Enable, 0=Disable.\n");
 	printf("\t[-s sample_rate_hz] # Sample rate in Hz (4/8/10/12.5/16/20MHz, default %sMHz).\n",
 		u64toa((DEFAULT_SAMPLE_RATE_HZ/FREQ_ONE_MHZ),&ascii_u64_data1));
-	printf("\t[-n num_samples] # Number of samples to transfer (default is unlimited).\n");
+//	printf("\t[-n num_samples] # Number of samples to transfer (default is unlimited).\n");
 #ifndef _WIN32
 /* The required atomic load/store functions aren't available when using C with MSVC */
-	printf("\t[-S buf_size] # Enable receive streaming with buffer size buf_size.\n");
+//	printf("\t[-S buf_size] # Enable receive streaming with buffer size buf_size.\n");
 #endif
-	printf("\t[-c amplitude] # CW signal source mode, amplitude 0-127 (DC value to DAC).\n");
-        printf("\t[-R] # Repeat TX mode (default is off) \n");
 	printf("\t[-b baseband_filter_bw_hz] # Set baseband filter bandwidth in Hz.\n\tPossible values: 1.75/2.5/3.5/5/5.5/6/7/8/9/10/12/14/15/20/24/28MHz, default <= 0.75 * sample_rate_hz.\n" );
 	printf("\t[-C ppm] # Set Internal crystal clock error in ppm.\n");
 	printf("\t[-H hw_sync_enable] # Synchronise USB transfer using GPIO pins.\n");

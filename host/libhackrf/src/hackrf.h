@@ -103,6 +103,8 @@ enum operacake_ports {
 enum sweep_style {
 	LINEAR = 0,
 	INTERLEAVED = 1,
+	TX_LINEAR = 2,
+	TX_LOG = 3,
 };
 
 typedef struct hackrf_device hackrf_device;

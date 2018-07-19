@@ -1911,7 +1911,7 @@ int ADDCALL hackrf_init_sweep(hackrf_device* device,
 		return HACKRF_ERROR_INVALID_PARAM;
 	}
 
-	if(INTERLEAVED < style) {
+	if(TX_LOG < style) {
 		return HACKRF_ERROR_INVALID_PARAM;
 	}
 
